@@ -235,11 +235,10 @@ public class RainfallAnalyser {
             list[UPDATED_DAY_POSITION] = Integer.parseInt(entry[day_position]);
             list[UPDATED_RAINFALL_POSITION] = Double.parseDouble(entry[initial_rainfall_position]);
             list[UPDATED_TIME_POSITION] = Integer.parseInt(entry[initial_time_position]); // Assigns the entry's time
-            // period of last time a
-            // record was taken in days.
+            // period of last time a record was taken in days.
 
             // Assigns the average rainfall based on the amount of days since the previous test was performed. Prevents
-            // the rainfall amount from a 10 day timeframe since the last test was taken being assigned as the minimum
+            // the rainfall amount from a 10-day timeframe since the last test was taken being assigned as the minimum
             // and maximum being assigned.
             list[AVERAGE_POSITION] = list[UPDATED_RAINFALL_POSITION] / list[UPDATED_TIME_POSITION];
 
