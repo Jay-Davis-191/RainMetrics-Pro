@@ -31,7 +31,7 @@ public class RainfallAnalyser {
 
     public static File RAINFALL_DATA_FILE; // Location of csv file being read.
 
-    public static File UPDATED_RAINFALL_DATA_FILE = new File(FILE_PATH + "RainfallData.txt"); // Location of csv file being
+    public static File UPDATED_RAINFALL_DATA_FILE = new File("RainfallData.txt"); // Location of csv file being
                                                                                       // written to.
 
     public static int number_of_columns; // Equals the number of columns in RAINFALL_DATA_FILE.

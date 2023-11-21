@@ -278,6 +278,7 @@ public class RainfallVisualiser extends Application {
             final XYChart.Series<String, Number> December = new XYChart.Series<>();
 
             RainfallAnalyser.RAINFALL_DATA_FILE = new File(RainfallAnalyser.FILE_PATH + File.separator + csv_files.get(file_index));
+            System.out.println(RainfallAnalyser.UPDATED_RAINFALL_DATA_FILE);
             try {
                 data = files_data[file_index]; // Finds the 2D array in the 3D array for the selected csv file's index.
 
