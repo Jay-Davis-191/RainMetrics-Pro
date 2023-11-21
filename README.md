@@ -22,18 +22,18 @@ The timeframe for this project was 2 weeks where I assigned 1-2 hours a day. Thi
 1. Install IntelliJ from [here](https://www.jetbrains.com/idea/download/?section=windows)
 2. Install JavaFX from [here](https://gluonhq.com/products/javafx/)
 3. Open the 'src' folder in IntelliJ.
-4. Ensure the following has been set.
-   i. Configure IntelliJ to use JavaFX.
-      a. Go to "File" > "Project Structure."
-      b. Under "Project," set the "Project SDK" to JDK 19.
-      c. Under "Project," set the "Project language level" to the appropriate level for your code.
-      d. Under "Libraries," click the "+" button to add a new library.
-      e. Choose "Java" and add the lib directory from the extracted JavaFX SDK.
-   ii. Configure VM Options (for JDK 11 and later)
-      a. In the Run Configuration, go to the "Configuration" tab.
-      b. In the "VM options" field, add the following (replace the path with the actual path to your JavaFX SDK):
-         --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
-5. Run RainfallVisualiser.java.
+4. Ensure the following has been set. <br>
+   i. Configure IntelliJ to use JavaFX. <br>
+      &emsp;a. Go to "File" > "Project Structure." <br>
+      &emsp;b. Under "Project," set the "Project SDK" to JDK 19. <br>
+      &emsp;c. Under "Project," set the "Project language level" to the appropriate level for your code.<br>
+      &emsp;d. Under "Libraries," click the "+" button to add a new library.<br>
+      &emsp;e. Choose "Java" and add the lib directory from the extracted JavaFX SDK.<br>
+   ii. Configure VM Options (for JDK 11 and later)<br>
+      &emsp;a. In the Run Configuration, go to the "Configuration" tab.<br>
+      &emsp;b. In the "VM options" field, add the following (replace the path with the actual path to your JavaFX SDK):<br>
+         &emsp;--module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml<br>
+5. Run RainfallVisualiser.java.<br>
 
 ## Contributions 
 This project was solely programmed and completed by me. 
