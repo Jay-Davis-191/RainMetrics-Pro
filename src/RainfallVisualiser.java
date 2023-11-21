@@ -56,9 +56,9 @@ public class RainfallVisualiser extends Application {
 
     final Label stats = new Label("\n" +
             "     Month's statistics                             \n\n" +
-            "     Rainfall Total:          \n"  +
-            "     Minimum:                \n" +
-            "     Maximum:               \n" +
+            "     Rainfall Total (ml):     \n"  +
+            "     Minimum (ml):           \n" +
+            "     Maximum (ml):          \n" +
             "                            "); // Creates a label to show the user the selected month's other relevant data.
 
     final int SCENE_WIDTH = 1250;
@@ -111,8 +111,8 @@ public class RainfallVisualiser extends Application {
 
         csv_files = FXCollections.observableArrayList("MountSheridanStationCNS.csv",
                 "CopperlodeDamStationCNS.csv", "KurandaRailwayStationCNS.csv", "EmptyCSV.csv", "EmptyCSVwithHeaders.csv",
-                "KurandaRailwayStationCNSWithDifferentColumnHeadersNames.csv",
-                "KurandaRailwayStationCNSWithDifferentColumnAllocation.csv", "NonExistantCSVFile.csv");
+                "KurandaRSCNSWithDifferentColumnHeadersNames.csv",
+                "KurandaRSCNSWithDifferentColumnAllocation.csv", "NonExistantCSVFile.csv");
         // Lists all available CSV files. Includes five extra CSV files for testing exceptions. Test files exclusively
         // contain in listed order above: Empty csv without headers, empty csv with headers, different names for columns'
         // headers, different allocation for columns, no csv file created.
@@ -184,7 +184,6 @@ public class RainfallVisualiser extends Application {
         bar_chart.toBack();
 
         scene.setOnMousePressed(e -> printDataOfSelectedColumn());
-
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -233,9 +232,9 @@ public class RainfallVisualiser extends Application {
                                     // Updates the text for the stats Label, which now contains the selected column's other information.
                                     stats.setText("\n     Month's statistics                             \n" +
                                             "     " + selected_year + ", " + selected_month + "                               \n" +
-                                            "     Rainfall Total:          " + selected_rainfall + "\n" +
-                                            "     Minimum:                " + selected_minimum + "\n" +
-                                            "     Maximum:               " + selected_maximum + "\n" + " ");
+                                            "     Rainfall Total (ml):     " + selected_rainfall + "\n" +
+                                            "     Minimum (ml):           " + selected_minimum + "\n" +
+                                            "     Maximum (ml):          " + selected_maximum + "\n" + " ");
                                     break;
                                 }
                             }
@@ -264,21 +263,20 @@ public class RainfallVisualiser extends Application {
             String entry;
             bar_chart.setAnimated(true);    // Updates the x-axis of the graph to the x-values of the selected csv file.
 
-            final XYChart.Series<String, Number> January = new XYChart.Series<>();
-            final XYChart.Series<String, Number> February = new XYChart.Series<>();
-            final XYChart.Series<String, Number> March = new XYChart.Series<>();
-            final XYChart.Series<String, Number> April = new XYChart.Series<>();
-            final XYChart.Series<String, Number> May = new XYChart.Series<>();
-            final XYChart.Series<String, Number> June = new XYChart.Series<>();
-            final XYChart.Series<String, Number> July = new XYChart.Series<>();
-            final XYChart.Series<String, Number> August = new XYChart.Series<>();
-            final XYChart.Series<String, Number> September = new XYChart.Series<>();
-            final XYChart.Series<String, Number> October = new XYChart.Series<>();
-            final XYChart.Series<String, Number> November = new XYChart.Series<>();
-            final XYChart.Series<String, Number> December = new XYChart.Series<>();
+            final XYChart.Series<String, Number> January = createSeries("January");
+            final XYChart.Series<String, Number> February = createSeries("February");
+            final XYChart.Series<String, Number> March = createSeries("March");
+            final XYChart.Series<String, Number> April = createSeries("April");
+            final XYChart.Series<String, Number> May = createSeries("May");
+            final XYChart.Series<String, Number> June = createSeries("June");
+            final XYChart.Series<String, Number> July = createSeries("July");
+            final XYChart.Series<String, Number> August = createSeries("August");
+            final XYChart.Series<String, Number> September = createSeries("September");
+            final XYChart.Series<String, Number> October = createSeries("October");
+            final XYChart.Series<String, Number> November = createSeries("November");
+            final XYChart.Series<String, Number> December = createSeries("December");
 
             RainfallAnalyser.RAINFALL_DATA_FILE = new File(RainfallAnalyser.FILE_PATH + File.separator + csv_files.get(file_index));
-            System.out.println(RainfallAnalyser.UPDATED_RAINFALL_DATA_FILE);
             try {
                 data = files_data[file_index]; // Finds the 2D array in the 3D array for the selected csv file's index.
 
@@ -358,9 +356,9 @@ public class RainfallVisualiser extends Application {
                 bar_chart.setAnimated(false);
                 stats.setText("\n" +
                         "     Month's statistics                             \n\n" +
-                        "     Rainfall Total:          \n" +
-                        "     Minimum:                \n" +
-                        "     Maximum:               \n" +
+                        "     Rainfall Total (ml):     \n"  +
+                        "     Minimum (ml):           \n" +
+                        "     Maximum (ml):          \n" +
                         "                            "); // Resets the stats Label.
             } catch (NullPointerException e) {
                 System.out.println("\n---------------------------------------------------------------------");
@@ -449,6 +447,13 @@ public class RainfallVisualiser extends Application {
 
         return numerical_month;
     } // ends convertMonth
+
+    private XYChart.Series<String, Number> createSeries(String name) {
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName(name);
+
+        return series;
+    }
 
 }
 
