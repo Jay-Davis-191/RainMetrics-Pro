@@ -6,12 +6,15 @@
  a different csv file.
  */
 
-package Beta_Assignment.RainfallAnalyser;
+package RainfallAnalyser;
+
 import java.io.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.lang.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 /**
@@ -23,9 +26,8 @@ import java.util.Arrays;
 
 public class RainfallAnalyser {
 
-    public static String FILE_PATH = "Jay_Davis_Beta_Assignment\\src\\Beta_Assignment\\"; // File path to subdirectory
-                                                                                          // that contains multiple csv
-                                                                                          // files.
+    public static String FILE_PATH = System.getProperty("user.dir");    // File path to subdirectory that contains
+                                                                        // multiple csv files.
 
     public static File RAINFALL_DATA_FILE; // Location of csv file being read.
 

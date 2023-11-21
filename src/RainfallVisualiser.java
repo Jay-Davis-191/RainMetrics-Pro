@@ -6,8 +6,7 @@
  class, RainfallAnalyser.
  * */
 
-package Beta_Assignment;
-import Beta_Assignment.RainfallAnalyser.RainfallAnalyser;
+import RainfallAnalyser.RainfallAnalyser;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -122,7 +121,7 @@ public class RainfallVisualiser extends Application {
 
         int count = 0;
         for (String file : csv_files)   {
-            RainfallAnalyser.RAINFALL_DATA_FILE  = new File(RainfallAnalyser.FILE_PATH + file);
+            RainfallAnalyser.RAINFALL_DATA_FILE  = new File(RainfallAnalyser.FILE_PATH + File.separator + file);
             try {
                 RainfallAnalyser.main(null);    // Processes and calculates the dataset of the selected csv file.
                 // Reads the calculations and assigns to the 3D array, files_data.
@@ -278,8 +277,7 @@ public class RainfallVisualiser extends Application {
             final XYChart.Series<String, Number> November = new XYChart.Series<>();
             final XYChart.Series<String, Number> December = new XYChart.Series<>();
 
-            RainfallAnalyser.RAINFALL_DATA_FILE = new File(RainfallAnalyser.FILE_PATH + csv_files.get(file_index));
-
+            RainfallAnalyser.RAINFALL_DATA_FILE = new File(RainfallAnalyser.FILE_PATH + File.separator + csv_files.get(file_index));
             try {
                 data = files_data[file_index]; // Finds the 2D array in the 3D array for the selected csv file's index.
 

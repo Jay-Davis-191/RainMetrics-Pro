@@ -1,4 +1,4 @@
-Product code,Bureau of Meteorology station number,Year,Month,Day,Rainfall amount taken in millimetres,Time Period since last rainfall was measured (days),Quality of recording
+Product code,Bureau of Meteorology station number,Year,Month,Day,Rainfall amount (millimetres),Period over which rainfall was measured (days),Quality
 IDCJAC0009,031063,2005,01,01,5.4,1,Y
 IDCJAC0009,031063,2005,01,02,4.4,1,Y
 IDCJAC0009,031063,2005,01,03,3.2,1,Y
