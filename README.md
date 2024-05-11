@@ -1,4 +1,4 @@
-# Rainfall Visualiser
+# RainMetrics Pro
  
 ## Description
 This project is a JavaFX program that retrieves data from a chosen csv file and displays the data via a bar graph after the data is cleaned and processed. The data being processed in this project is based around the rainfall amounts received in multiple locations in Queensland. Each location has its own csv file to hold their data and each csv can be selected from the drop-down menu. 
